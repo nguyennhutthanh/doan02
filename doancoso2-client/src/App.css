@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.paginationBttns {
+  color: white;
+  cursor: pointer;
+}
+.paginationDisabled {
+  background-color: #0b88ad !important;
+}
+.paginationActive {
+  background-color: #243737 !important;
+}
+.map-search:hover {
+  background-color: #9de3f8 !important;
+}
+/* css */
+.giuseart-mobile-contact-bar {
+  display: none;
+}
+.giuseart-pc-contact-bar {
+  left: 30px;
+  bottom: 30px;
+  position: fixed;
+  z-index: 998;
+  margin-bottom: 0;
+}
+.giuseart-pc-contact-bar li {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 0;
+  list-style: none;
+}
+.giuseart-pc-contact-bar li.map {
+  margin-bottom: 8px;
+  background: url(https://cdn-icons-png.flaticon.com/512/2991/2991231.png);
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+.giuseart-pc-contact-bar li.facebook {
+  margin-bottom: 8px;
+  background: url(https://cdn-icons-png.flaticon.com/512/906/906386.png);
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+.giuseart-pc-contact-bar li.facebook2 {
+  margin-bottom: 8px;
+  background: url(https://cdn-icons-png.flaticon.com/512/1312/1312139.png);
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+.giuseart-pc-contact-bar li.zalo {
+  background: url(https://cdn-icons-png.flaticon.com/512/906/906382.png);
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+
+.giuseart-pc-contact-bar li.hotline {
+  background: url(https://cdn-icons-png.flaticon.com/512/552/552489.png);
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+
+.giuseart-pc-contact-bar li a {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+@media only screen and (max-width: 499px) {
+  .giuseart-pc-contact-bar {
+    display: none;
+  }
+  .giuseart-mobile-contact-bar {
+    left: 10px;
+    bottom: 10px;
+    position: fixed;
+    z-index: 998;
+    margin-bottom: 0;
+    display: block !important;
+  }
+  .giuseart-mobile-contact-bar li {
+    display: inline-block;
+    float: left;
+    margin-right: 7px;
+    list-style: none;
+  }
+  .giuseart-mobile-contact-bar li.map {
+    margin-bottom: 8px;
+    background: url(https://cdn-icons-png.flaticon.com/512/2991/2991231.png);
+    background-repeat: no-repeat;
+  }
+  .giuseart-mobile-contact-bar li.facebook {
+    margin-bottom: 8px;
+    background: url(https://cdn-icons-png.flaticon.com/512/906/906386.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+  }
+  .giuseart-mobile-contact-bar li.facebook2 {
+    margin-bottom: 8px;
+    background: url(https://cdn-icons-png.flaticon.com/512/1312/1312139.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+  }
+  .giuseart-mobile-contact-bar li.zalo {
+    background: url(https://cdn-icons-png.flaticon.com/512/906/906382.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+  }
+  .giuseart-mobile-contact-bar li a {
+    display: block;
+    width: 48px;
+    height: 48px;
+  }
+  .giuseart-mobile-contact-bar li.hotline {
+    background: url(https://cdn-icons-png.flaticon.com/512/552/552489.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+  }
+}
+
+.pb-select-location-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100% - 66px);
+}
+.pb-select-location-item {
+  padding: 16px;
+  border-top: 1px solid #d8dde6 !important;
+  cursor: pointer;
+}
+.pb-select-location-item > div {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  font-weight: 500;
+}
