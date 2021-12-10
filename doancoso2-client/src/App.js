@@ -30,7 +30,13 @@ function App() {
         <div id="home4">
           <Header />
           <Switch>
-            <React.Suspense fallback={<p>...loading</p>}>
+            <React.Suspense fallback={
+              <div className="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            }>
               <Route exact path="/"> <Home /> </Route>
               <Route exact path="/Product"> <Product /> </Route>
               <Route exact path="/About"> <About /> </Route>

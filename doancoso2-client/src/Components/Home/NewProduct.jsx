@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { formatNumber } from '../../Common/index';
 import { addToCart, getTotals } from "../../features/cartSlice";
 import { toast } from "react-toastify";
+import { Skeleton } from 'react-skeleton-generator';
 
 const NewProduct = () => {
     const product = useSelector((state) => state.allProduct.product);
@@ -99,7 +100,34 @@ const NewProduct = () => {
     return (
         <>
             {
-                Object.keys(product).length === 0 ? <h4 className="text-center">...Loading data</h4> : renderList
+                Object.keys(product).length === 0 ?
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <Skeleton.SkeletonThemeProvider style={{ marginRight: "40px", marginLeft: "50px" }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ marginBottom: "15px !important", margin: '0 auto' }} />
+                            <Skeleton count={3} widthMultiple={['218px', '218px', '218px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0 auto', marginBottom: '6px' }} />
+                        </Skeleton.SkeletonThemeProvider>
+                        <Skeleton.SkeletonThemeProvider style={{ marginRight: "40px" }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ marginBottom: "15px !important", margin: '0 auto' }} />
+                            <Skeleton count={3} widthMultiple={['218px', '218px', '218px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0 auto', marginBottom: '6px' }} />
+                        </Skeleton.SkeletonThemeProvider>
+                        <Skeleton.SkeletonThemeProvider style={{ marginRight: "40px" }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ marginBottom: "15px !important", margin: '0 auto' }} />
+                            <Skeleton count={3} widthMultiple={['218px', '218px', '218px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0 auto', marginBottom: '6px' }} />
+                        </Skeleton.SkeletonThemeProvider>
+                        <Skeleton.SkeletonThemeProvider style={{ marginRight: "40px" }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ marginBottom: "15px !important", margin: '0 auto' }} />
+                            <Skeleton count={3} widthMultiple={['218px', '218px', '218px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0 auto', marginBottom: '6px' }} />
+                        </Skeleton.SkeletonThemeProvider>
+                        <Skeleton.SkeletonThemeProvider style={{ marginRight: "50px", marginBottom: '25px' }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ marginBottom: "15px !important", margin: '0 auto' }} />
+                            <Skeleton count={3} widthMultiple={['218px', '218px', '218px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0 auto', marginBottom: '6px' }} />
+                        </Skeleton.SkeletonThemeProvider>
+                    </div> : renderList
             }
         </>
     );

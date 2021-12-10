@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel';
+import { Skeleton } from 'react-skeleton-generator';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
@@ -46,7 +47,16 @@ const ListDanhmuc = () => {
                         <p>BẠN THÍCH THỂ LOẠI NÀO !</p>
                     </div>
                     <OwlCarousel {...options} className='owl-theme featured' loop margin={10} nav>
-                        {renderList}
+                        {category.length > 0 ? renderList
+                            : <Skeleton.SkeletonThemeProvider>
+                                <Skeleton
+                                    style={{ margin: '0 auto', marginBottom: '10px' }}
+                                    width="233px" height="233px" borderRadius="50%" />
+                                <Skeleton count={2} widthMultiple={['300px', '300px']} heightMultiple={['21px', '18px']}
+                                    style={{ margin: '0 auto', marginBottom: '6px' }}
+                                />
+                            </Skeleton.SkeletonThemeProvider>
+                        }
                     </OwlCarousel>
                 </div>
             </div>

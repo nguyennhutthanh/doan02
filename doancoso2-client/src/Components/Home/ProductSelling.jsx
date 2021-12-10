@@ -7,6 +7,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { formatNumber } from '../../Common/index'
 import { addToCart, getTotals } from "../../features/cartSlice";
 import { toast } from "react-toastify";
+import { Skeleton } from 'react-skeleton-generator';
 
 const ProductSelling = () => {
     const options = {
@@ -129,7 +130,12 @@ const ProductSelling = () => {
         <div id="new1" className="tab-pane fade in active show">
             <OwlCarousel className='owl-theme' {...options} loop margin={10} nav>
                 {
-                    selling.length > 0 ? renderList : <h4>...Loading data</h4>
+                    selling.length > 0 ? renderList :
+                        <Skeleton.SkeletonThemeProvider style={{ margin: '20px 10px 25px' }}>
+                            <Skeleton width="225.8px" height="227.8px" style={{ margin: '0px 12px 12px !important' }} />
+                            <Skeleton count={3} widthMultiple={['222px', '222px', '222px']} heightMultiple={['28px', '28px', '28px']}
+                                style={{ margin: '0px 12px 6px !important' }} />
+                        </Skeleton.SkeletonThemeProvider>
                 }
             </OwlCarousel>
         </div>
