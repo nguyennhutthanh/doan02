@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import Login from '../User/Login';
 import { setUserAccount } from '../../redux/actions/productActions';
 import axios from 'axios';
+import PaypalCheckout from './PaypalCheckout';
 
 const Checkout = () => {
   const [checkout, setCheckout] = useState([])
@@ -65,6 +66,17 @@ const Checkout = () => {
     }
   }
 
+  const payCheckout = (formDataPaypal) => {
+    createAPI(MapAPI.CHECKOUT + "/CheckoutAccount").create(formDataPaypal)
+      .then(res => {
+        toast.success(`Thanh toán thành công`, {
+          position: "top-right",
+        });
+        console.log("data: ", formDataPaypal);
+      }).catch(err => console.log(err))
+    history.push("/Success");
+  }
+
   const UserLogin = (FormUser) => {
     createAPI(MapAPI.USERACCOUNT + "/SignInUser").create(FormUser)
       .then(res => {
@@ -106,6 +118,11 @@ const Checkout = () => {
                                 Đăng nhập
                               </a>
                             </li> : ""}
+                            <li className="nav-item">
+                              <a className="nav-link" data-toggle="tab" href="#checkoutpaypal">
+                                Thanh toán trưc tuyến
+                              </a>
+                            </li>
                           </ul>
                           <div className="tab-content" style={{ marginTop: '0px' }}>
                             <div className="tab-pane fade in active show" id="checkout-guest-form" role="tabpanel">
@@ -114,6 +131,10 @@ const Checkout = () => {
                             <div className="tab-pane fade" id="checkout-login-form" role="tabpanel">
                               <Login UserLogin={UserLogin} />
                             </div>
+                            {/* thánh toán paylal */}
+                            <PaypalCheckout cartTotalAmount={cartTotalAmount}
+                              addOrEdit={payCheckout} />
+                            {/* thánh toán paylal */}
                           </div>
                         </div>
                       </div>

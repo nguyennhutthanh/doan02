@@ -135,7 +135,7 @@ const FormCheckout = (props) => {
             {
                 user === null ?
                     <div>
-                        <input type="hidden" name="id_customer" defaultValue />
+                        <input type="hidden" name="id_customer" />
                         <div className="form-group row">
                             <input
                                 className="form-control"
@@ -186,7 +186,7 @@ const FormCheckout = (props) => {
                                     {
                                         selectThanhPho.map((item) => {
                                             return (
-                                                <option selected value={item.name}>
+                                                <option value={item.name}>
                                                     {item.name}
                                                 </option>
                                             )

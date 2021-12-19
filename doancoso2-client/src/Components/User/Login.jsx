@@ -45,7 +45,7 @@ const Login = (props) => {
   return (
     <form onSubmit={handleSubmitUser} id="customer-form" >
       <div>
-        <input type="hidden" name="back" defaultValue="my-account" />
+        <input type="hidden" name="back" />
         <div className="form-group no-gutters">
           <input className="form-control" name="username"
             value={values.username}

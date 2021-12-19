@@ -15,7 +15,6 @@ function Header() {
 	const history = useHistory();
 	const dataUser = JSON.parse(localStorage.getItem("info_user"));
 	const map = useSelector(state => state.user.user)
-	console.log(map)
 	const dispatch = useDispatch();
 
 	const fetchListRooms = async () => {

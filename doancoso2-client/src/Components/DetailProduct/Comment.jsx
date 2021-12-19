@@ -46,7 +46,7 @@ const Comment = (props) => {
 
     return (
         <form onSubmit={handleSubmitComment} className="new-review-form">
-            <input type="hidden" name="review[rating]" defaultValue={3} />
+            <input type="hidden" name="review[rating]" />
             <input type="hidden" name="product_id" />
             <h3 className="spr-form-title">Đánh giá sản phẩm</h3>
             <fieldset className="spr-form-contact">

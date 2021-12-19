@@ -26,7 +26,6 @@ const AddressMap = () => {
             axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${add.addresss}.json?access_token=pk.eyJ1IjoidGhhbmgwMDciLCJhIjoiY2t3bTN0M21qMjhkdDJ2dXR4eHliZW9rdSJ9.g0QyW0VbyWuHzQdmomiZ1w`)
                 .then(function (response) {
                     // handle success
-                    console.log(response);
                     newArray.push({
                         ...add,
                         longitude: response.data.features[0].center[0],
@@ -51,7 +50,7 @@ const AddressMap = () => {
                                     <div id="pb-select-location-list" className="pb-select-location-list">
                                         {
                                             addMarket.map((add) => (
-                                                <div className="pb-select-location-item">
+                                                <div key={add.id} className="pb-select-location-item">
                                                     <div>
                                                         <img
                                                             src="https://sdk-vn.pushdi.com/image/maxlead/widget_icon_location.svg" />
@@ -70,7 +69,7 @@ const AddressMap = () => {
                                         mapboxApiAccessToken="pk.eyJ1IjoidGhhbmgwMDciLCJhIjoiY2t3bTN0M21qMjhkdDJ2dXR4eHliZW9rdSJ9.g0QyW0VbyWuHzQdmomiZ1w"
                                     >
                                         {addMarket.map((add) => (
-                                            <Marker latitude={add.latitude}
+                                            <Marker key={add.id} latitude={add.latitude}
                                                 longitude={add.longitude}
                                                 offsetLeft={-20}
                                                 offsetTop={-10}>

@@ -22,7 +22,6 @@ const DetailProduct = () => {
   const state = useSelector((state) => state.cart.cartItems);
   const dataCart = JSON.parse(localStorage.getItem("cartItems"))
 
-  console.log(dataCart)
   const {
     maSP, tenSP, giaSP, urlAnhSanPham, soluong, danhMucHinhNavigation, mota, review, xuatXu, baoHanh, kichThuoc, giaKhuyenMai, danhmucNavigation, thuongHieuNavigation, chatLieuNavigation, size, khuyenMaiNavigation, commentsNavigation } = product;
 
@@ -209,7 +208,8 @@ const DetailProduct = () => {
                                               <span className="control-label">SỐ LƯỢNG : </span>
                                               <input type="text" name="qty"
                                                 readOnly
-                                                id="quantity_wanted" defaultValue={0} value={size} min="0" max="100"
+                                                defaultValue='0'
+                                                id="quantity_wanted" value={size} min="0" max="100"
                                                 className="input-group form-control" />
                                               <span className="input-group-btn-vertical">
                                                 <button className="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button"
